@@ -43,9 +43,9 @@ namespace DataAnalytics
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDescription = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtFilePath2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtFilePath = new System.Windows.Forms.Label();
@@ -210,7 +210,7 @@ namespace DataAnalytics
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.btnDescription);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label3);
@@ -222,40 +222,41 @@ namespace DataAnalytics
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button7
+            // btnDescription
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(219, 128);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(95, 30);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Description";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.btnDescription.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.btnDescription.FlatAppearance.BorderSize = 0;
+            this.btnDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescription.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDescription.Location = new System.Drawing.Point(219, 128);
+            this.btnDescription.Name = "btnDescription";
+            this.btnDescription.Size = new System.Drawing.Size(95, 30);
+            this.btnDescription.TabIndex = 3;
+            this.btnDescription.Text = "Description";
+            this.btnDescription.UseVisualStyleBackColor = false;
+            this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.txtFilePath2);
             this.panel4.Controls.Add(this.button6);
             this.panel4.Location = new System.Drawing.Point(280, 83);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(238, 33);
             this.panel4.TabIndex = 4;
             // 
-            // label5
+            // txtFilePath2
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label5.Location = new System.Drawing.Point(89, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(205, 22);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Aucun fichier selectionné.";
+            this.txtFilePath2.AutoSize = true;
+            this.txtFilePath2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtFilePath2.Location = new System.Drawing.Point(89, 9);
+            this.txtFilePath2.Name = "txtFilePath2";
+            this.txtFilePath2.Size = new System.Drawing.Size(205, 22);
+            this.txtFilePath2.TabIndex = 5;
+            this.txtFilePath2.Text = "Aucun fichier selectionné.";
             // 
             // button6
             // 
@@ -268,6 +269,7 @@ namespace DataAnalytics
             this.button6.TabIndex = 5;
             this.button6.Text = "Parcourir ...";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel3
             // 
@@ -437,9 +439,9 @@ namespace DataAnalytics
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Label txtFilePath;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtFilePath2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDescription;
         private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.TextBox tbCol;
         private System.Windows.Forms.TextBox tbpourcent;

@@ -108,71 +108,124 @@ namespace DataAnalytics
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 txtFilePath.Text = openDialog.FileName.ToString();
-                BindDataCSV(txtFilePath.Text);
+//                BindDataCSV(txtFilePath.Text);
             }
 
-            void BindDataCSV(string filePath)
+            
+        }
+        void BindDataCSV(string filePath)
+        {
+            DataTable dt = new DataTable();
+
+            string[] lines = System.IO.File.ReadAllLines(filePath);
+            if (lines.Length > 0)
             {
-                DataTable dt = new DataTable();
+                //firstLine to create Header
+                string firstLine = lines[0];
+                string[] headerLabels = firstLine.Split(',');
+                //.....................
+                tbLines.Text = (lines.Length - 1).ToString();
+                tbColonnes.Text = headerLabels.Length.ToString();
 
-                string[] lines = System.IO.File.ReadAllLines(filePath);
-                if (lines.Length > 0)
+                int[] numNULL = new int[headerLabels.Length];
+                for (int i = 0; i < numNULL.Length; i++) numNULL[i] = 0;
+                ///.....................
+                foreach (string headerWord in headerLabels)
                 {
-                    //firstLine to create Header
-                    string firstLine = lines[0];
-                    string[] headerLabels = firstLine.Split(',');
-                    //.....................
-                    tbLines.Text = (lines.Length - 1).ToString();
-                    tbColonnes.Text = headerLabels.Length.ToString();
-
-                    int[] numNULL = new int[headerLabels.Length];
-                    for (int i = 0; i < numNULL.Length; i++) numNULL[i] = 0;
-                    ///.....................
+                    dt.Columns.Add(new DataColumn(headerWord));
+                }
+                //for data
+                for (int r = 1; r < lines.Length; r++)
+                {
+                    string[] dataWords = lines[r].Split(',');
+                    DataRow dr = dt.NewRow();
+                    int columnIndex = 0;
                     foreach (string headerWord in headerLabels)
                     {
-                        dt.Columns.Add(new DataColumn(headerWord));
+                        //.........
+                        if (dataWords[columnIndex] == "")
+                            numNULL[columnIndex]++;
+                        //.........
+                        dr[headerWord] = dataWords[columnIndex++];
+
+
                     }
-                    //for data
-                    for (int r = 1; r < lines.Length; r++)
-                    {
-                        string[] dataWords = lines[r].Split(',');
-                        DataRow dr = dt.NewRow();
-                        int columnIndex = 0;
-                        foreach (string headerWord in headerLabels)
-                        {
-                            //.........
-                            if (dataWords[columnIndex] == "")
-                                numNULL[columnIndex]++;
-                            //.........
-                            dr[headerWord] = dataWords[columnIndex++];
-
-
-                        }
-                        dt.Rows.Add(dr);
-                    }
-                    //.........
-                    tbColonnes.Text = headerLabels.Length.ToString();
-                    int sumNULL = numNULL.Sum();
-
-                    double p = (double)sumNULL * 100 / ((double)(lines.Length - 1) * (double)headerLabels.Length);
-
-                    tbpourcent.Text = Math.Round(p, 2).ToString();
-                    int col = 0;
-                    for (int i = 0; i < numNULL.Length; i++)
-                        if (numNULL[i] != 0) col++;
-                    tbCol.Text = col.ToString();
-
-                    //.........
-
-
+                    dt.Rows.Add(dr);
                 }
-                if (dt.Rows.Count > 0)
-                {
-                    dgvEmployees.DataSource = dt;
-                }
+                //.........
+                tbColonnes.Text = headerLabels.Length.ToString();
+                int sumNULL = numNULL.Sum();
+
+                double p = (double)sumNULL * 100 / ((double)(lines.Length - 1) * (double)headerLabels.Length);
+
+                tbpourcent.Text = Math.Round(p, 2).ToString();
+                int col = 0;
+                for (int i = 0; i < numNULL.Length; i++)
+                    if (numNULL[i] != 0) col++;
+                tbCol.Text = col.ToString();
+
+                //.........
 
 
             }
+            if (dt.Rows.Count > 0)
+            {
+                dgvEmployees.DataSource = dt;
+            }
+
+
         }
+
+        private void btnDescription_Click(object sender, EventArgs e)
+        {
+            BindDataCSV(txtFilePath.Text);
+
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtFilePath2.Text = openDialog.FileName.ToString();
+                //BindDataCSV(txtFilePath2.Text);
+            }
+        }
+       /** void BindDataCSV(string filePath)
+        {
+            DataTable dt2 = new DataTable();
+
+            string[] lines2 = System.IO.File.ReadAllLines(filePath);
+            if (lines2.Length > 0)
+            {
+                //firstLine to create Header
+                string firstLine = lines2[0];
+                string[] headerLabels = firstLine.Split(',');
+
+                foreach (string headerWord in headerLabels)
+                {
+                    dt2.Columns.Add(new DataColumn(headerWord));
+                }
+                //for data
+                for (int r = 1; r < lines2.Length; r++)
+                {
+                    string[] dataWords = lines2[r].Split(',');
+                    DataRow dr = dt2.NewRow();
+                    int columnIndex = 0;
+                    foreach (string headerWord in headerLabels)
+                    {
+                        dr[headerWord] = dataWords[columnIndex++];
+                    }
+                    dt2.Rows.Add(dr);
+                }
+            }
+            if (dt2.Rows.Count > 0)
+            {
+                dgvEmployees.DataSource = dt2;
+            }
+
+
+        }*/
+
+        
     }
 }
