@@ -37,6 +37,7 @@ namespace DataAnalytics
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -190,42 +191,59 @@ namespace DataAnalytics
                 //BindDataCSV(txtFilePath2.Text);
             }
         }
-       /** void BindDataCSV(string filePath)
-        {
-            DataTable dt2 = new DataTable();
-
-            string[] lines2 = System.IO.File.ReadAllLines(filePath);
-            if (lines2.Length > 0)
-            {
-                //firstLine to create Header
-                string firstLine = lines2[0];
-                string[] headerLabels = firstLine.Split(',');
-
-                foreach (string headerWord in headerLabels)
-                {
-                    dt2.Columns.Add(new DataColumn(headerWord));
-                }
-                //for data
-                for (int r = 1; r < lines2.Length; r++)
-                {
-                    string[] dataWords = lines2[r].Split(',');
-                    DataRow dr = dt2.NewRow();
-                    int columnIndex = 0;
-                    foreach (string headerWord in headerLabels)
-                    {
-                        dr[headerWord] = dataWords[columnIndex++];
-                    }
-                    dt2.Rows.Add(dr);
-                }
-            }
-            if (dt2.Rows.Count > 0)
-            {
-                dgvEmployees.DataSource = dt2;
-            }
-
-
-        }*/
 
         
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
+
+        /** void BindDataCSV(string filePath)
+{
+    DataTable dt2 = new DataTable();
+
+    string[] lines2 = System.IO.File.ReadAllLines(filePath);
+    if (lines2.Length > 0)
+    {
+        //firstLine to create Header
+        string firstLine = lines2[0];
+        string[] headerLabels = firstLine.Split(',');
+
+        foreach (string headerWord in headerLabels)
+        {
+            dt2.Columns.Add(new DataColumn(headerWord));
+        }
+        //for data
+        for (int r = 1; r < lines2.Length; r++)
+        {
+            string[] dataWords = lines2[r].Split(',');
+            DataRow dr = dt2.NewRow();
+            int columnIndex = 0;
+            foreach (string headerWord in headerLabels)
+            {
+                dr[headerWord] = dataWords[columnIndex++];
+            }
+            dt2.Rows.Add(dr);
+        }
+    }
+    if (dt2.Rows.Count > 0)
+    {
+        dgvEmployees.DataSource = dt2;
+    }
+
+
+}*/
+
+
     }
 }

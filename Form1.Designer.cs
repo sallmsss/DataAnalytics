@@ -37,11 +37,7 @@ namespace DataAnalytics
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -60,15 +56,19 @@ namespace DataAnalytics
             this.tbCol = new System.Windows.Forms.TextBox();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelDrop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -99,7 +99,7 @@ namespace DataAnalytics
             this.panelDrop.MaximumSize = new System.Drawing.Size(172, 160);
             this.panelDrop.MinimumSize = new System.Drawing.Size(172, 43);
             this.panelDrop.Name = "panelDrop";
-            this.panelDrop.Size = new System.Drawing.Size(172, 46);
+            this.panelDrop.Size = new System.Drawing.Size(172, 43);
             this.panelDrop.TabIndex = 2;
             // 
             // button4
@@ -115,6 +115,7 @@ namespace DataAnalytics
             this.button4.TabIndex = 3;
             this.button4.Text = "Analyse statique";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -129,6 +130,7 @@ namespace DataAnalytics
             this.button3.TabIndex = 2;
             this.button3.Text = "Nettoyage de données";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
@@ -145,66 +147,10 @@ namespace DataAnalytics
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = global::DataAnalytics.Properties.Resources.lastbas;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Base de données";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(149, 3);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(26, 28);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 15;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(774, 3);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(25, 23);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 1;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // panel2
             // 
@@ -254,7 +200,7 @@ namespace DataAnalytics
             this.txtFilePath2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtFilePath2.Location = new System.Drawing.Point(89, 9);
             this.txtFilePath2.Name = "txtFilePath2";
-            this.txtFilePath2.Size = new System.Drawing.Size(205, 22);
+            this.txtFilePath2.Size = new System.Drawing.Size(140, 14);
             this.txtFilePath2.TabIndex = 5;
             this.txtFilePath2.Text = "Aucun fichier selectionné.";
             // 
@@ -289,7 +235,7 @@ namespace DataAnalytics
             this.txtFilePath.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtFilePath.Location = new System.Drawing.Point(89, 9);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(205, 22);
+            this.txtFilePath.Size = new System.Drawing.Size(140, 14);
             this.txtFilePath.TabIndex = 4;
             this.txtFilePath.Text = "Aucun fichier selectionné.";
             this.txtFilePath.Click += new System.EventHandler(this.label4_Click);
@@ -313,7 +259,7 @@ namespace DataAnalytics
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(345, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 22);
+            this.label3.Size = new System.Drawing.Size(117, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "Table de signification";
             // 
@@ -323,7 +269,7 @@ namespace DataAnalytics
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(80, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 22);
+            this.label2.Size = new System.Drawing.Size(95, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "Base de données";
             // 
@@ -334,7 +280,7 @@ namespace DataAnalytics
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(124, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 29);
+            this.label1.Size = new System.Drawing.Size(279, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Importer la base de données";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -344,28 +290,28 @@ namespace DataAnalytics
             // 
             this.tbLines.Location = new System.Drawing.Point(241, 227);
             this.tbLines.Name = "tbLines";
-            this.tbLines.Size = new System.Drawing.Size(100, 28);
+            this.tbLines.Size = new System.Drawing.Size(100, 21);
             this.tbLines.TabIndex = 3;
             // 
             // tbColonnes
             // 
             this.tbColonnes.Location = new System.Drawing.Point(347, 227);
             this.tbColonnes.Name = "tbColonnes";
-            this.tbColonnes.Size = new System.Drawing.Size(100, 28);
+            this.tbColonnes.Size = new System.Drawing.Size(100, 21);
             this.tbColonnes.TabIndex = 4;
             // 
             // tbpourcent
             // 
             this.tbpourcent.Location = new System.Drawing.Point(469, 228);
             this.tbpourcent.Name = "tbpourcent";
-            this.tbpourcent.Size = new System.Drawing.Size(100, 28);
+            this.tbpourcent.Size = new System.Drawing.Size(100, 21);
             this.tbpourcent.TabIndex = 5;
             // 
             // tbCol
             // 
             this.tbCol.Location = new System.Drawing.Point(646, 228);
             this.tbCol.Name = "tbCol";
-            this.tbCol.Size = new System.Drawing.Size(100, 28);
+            this.tbCol.Size = new System.Drawing.Size(100, 21);
             this.tbCol.TabIndex = 6;
             // 
             // dgvEmployees
@@ -382,9 +328,65 @@ namespace DataAnalytics
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(774, 3);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(25, 23);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 1;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::DataAnalytics.Properties.Resources.lastbas;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 53);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Base de données";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(149, 3);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(26, 28);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 1;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(800, 485);
@@ -402,9 +404,6 @@ namespace DataAnalytics
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panelDrop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -412,6 +411,9 @@ namespace DataAnalytics
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
