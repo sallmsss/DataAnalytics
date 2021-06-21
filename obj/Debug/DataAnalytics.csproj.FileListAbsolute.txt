@@ -10,3 +10,14 @@ C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.csproj.CopyCo
 C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.exe
 C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.pdb
 C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.csproj.AssemblyReference.cache
+D:\DOTNET\DataAnalytics\bin\Debug\DataAnalytics.exe.config
+D:\DOTNET\DataAnalytics\bin\Debug\DataAnalytics.exe
+D:\DOTNET\DataAnalytics\bin\Debug\DataAnalytics.pdb
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.csprojAssemblyReference.cache
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.Form1.resources
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.Properties.Resources.resources
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.csproj.GenerateResource.cache
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.csproj.CoreCompileInputs.cache
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.csproj.CopyComplete
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.exe
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.pdb
