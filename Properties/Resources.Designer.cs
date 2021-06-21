@@ -63,16 +63,6 @@ namespace DataAnalytics.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bas {
-            get {
-                object obj = ResourceManager.GetObject("bas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap haut {
             get {
                 object obj = ResourceManager.GetObject("haut", resourceCulture);
