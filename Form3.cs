@@ -19,6 +19,7 @@ namespace DataAnalytics
         public Form3()
         {
             InitializeComponent();
+            dtgstatic.DataSource = dt3;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

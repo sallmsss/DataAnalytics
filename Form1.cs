@@ -301,7 +301,7 @@ namespace DataAnalytics
                         int k = 0;
                         for (int j=0; j < dataWords.Length; j++) 
                         {
-                            if (colNonSignif[j] == 0 && colNumNULL[j] == 1)
+                            if (colNonSignif[j] == 0 || colNumNULL[j] == 1)
                                 continue;
                             newDataWords[k] = dataWords[j];
                             k++;
@@ -331,7 +331,7 @@ namespace DataAnalytics
                         {
                             if (headerWord == null)
                                 break;
-                            dr[headerWord] = dataWords[columnIndex++];
+                            dr[headerWord] = newDataWords[columnIndex++];
                             if (columnIndex == newHeaderLabels.Length)
                                 break;
 
