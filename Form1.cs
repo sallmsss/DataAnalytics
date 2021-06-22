@@ -203,6 +203,7 @@ namespace DataAnalytics
                 MessageBox.Show("Fichier CSV non sélectionné.");
             else
             {
+                String aucuneSignif="", bcpValManq="", linesValManq= "";
 
                 string filePath = txtFilePath.Text;
                 string significationPath = txtFilePath2.Text;
@@ -244,6 +245,7 @@ namespace DataAnalytics
                         }
                         columnIndex++;
                     }
+                    
 
                     for (int r = 1; r < lines.Length; r++)
                     {
@@ -271,6 +273,26 @@ namespace DataAnalytics
                         else if (numNULL[i] > 0) colAlittleNumNULL[i]++;
                     }
 
+                    // ********* aucuneSignif aucuneSignif linesValManq
+                    for (int i = 0; i < colNonSignif.Length; i++)
+                    {
+                        if (colNonSignif[i] == 0)
+                        {
+
+                            aucuneSignif = aucuneSignif  + headerLabels[i] + ", ";
+                        }
+                        if(colNumNULL[i]== 1)
+                        {
+                            bcpValManq = bcpValManq + headerLabels[i] + ", ";
+
+                        }
+                        if (colAlittleNumNULL[i] == 1)
+                        {
+                            linesValManq = linesValManq  + headerLabels[i] + ", ";
+
+                        }
+
+                    }
 
                     ///.....................
                     ///
@@ -346,6 +368,9 @@ namespace DataAnalytics
                 if (dt.Rows.Count > 0)
                 {
                     Form2.dt2 = dt;
+                    Form2.aucuneSignif = aucuneSignif;
+                    Form2.bcpValManq = bcpValManq;
+                    Form2.linesValManq = linesValManq;
                     Form3.dt3 = dt;
                 }
 

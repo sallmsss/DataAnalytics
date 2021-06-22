@@ -45,6 +45,9 @@ namespace DataAnalytics
             this.label1 = new System.Windows.Forms.Label();
             this.dgvnettoyage = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tbAucuneSignif = new System.Windows.Forms.TextBox();
+            this.tbBcpValManq = new System.Windows.Forms.TextBox();
+            this.tbLinesValManq = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelDrop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -201,7 +204,7 @@ namespace DataAnalytics
             // dgvnettoyage
             // 
             this.dgvnettoyage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvnettoyage.Location = new System.Drawing.Point(397, 251);
+            this.dgvnettoyage.Location = new System.Drawing.Point(379, 115);
             this.dgvnettoyage.Name = "dgvnettoyage";
             this.dgvnettoyage.RowHeadersWidth = 62;
             this.dgvnettoyage.RowTemplate.Height = 28;
@@ -212,11 +215,35 @@ namespace DataAnalytics
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // tbAucuneSignif
+            // 
+            this.tbAucuneSignif.Location = new System.Drawing.Point(752, 414);
+            this.tbAucuneSignif.Name = "tbAucuneSignif";
+            this.tbAucuneSignif.Size = new System.Drawing.Size(310, 26);
+            this.tbAucuneSignif.TabIndex = 12;
+            // 
+            // tbBcpValManq
+            // 
+            this.tbBcpValManq.Location = new System.Drawing.Point(752, 462);
+            this.tbBcpValManq.Name = "tbBcpValManq";
+            this.tbBcpValManq.Size = new System.Drawing.Size(310, 26);
+            this.tbBcpValManq.TabIndex = 13;
+            // 
+            // tbLinesValManq
+            // 
+            this.tbLinesValManq.Location = new System.Drawing.Point(752, 517);
+            this.tbLinesValManq.Name = "tbLinesValManq";
+            this.tbLinesValManq.Size = new System.Drawing.Size(310, 26);
+            this.tbLinesValManq.TabIndex = 14;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.tbLinesValManq);
+            this.Controls.Add(this.tbBcpValManq);
+            this.Controls.Add(this.tbAucuneSignif);
             this.Controls.Add(this.dgvnettoyage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuImageButton2);
@@ -252,5 +279,8 @@ namespace DataAnalytics
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvnettoyage;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox tbLinesValManq;
+        private System.Windows.Forms.TextBox tbBcpValManq;
+        private System.Windows.Forms.TextBox tbAucuneSignif;
     }
 }

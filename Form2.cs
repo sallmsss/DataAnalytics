@@ -14,12 +14,18 @@ namespace DataAnalytics
     public partial class Form2 : Form
     {
         public static DataTable dt2 = new DataTable();
+        public static String aucuneSignif;
+        public static String bcpValManq;
+        public static String linesValManq;
 
         private bool isCollapsed;
         public Form2()
         {
             InitializeComponent();
             dgvnettoyage.DataSource = dt2;
+            tbAucuneSignif.Text = aucuneSignif;
+            tbBcpValManq.Text = bcpValManq;
+            tbLinesValManq.Text = linesValManq;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
