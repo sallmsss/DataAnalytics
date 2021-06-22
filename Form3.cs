@@ -13,6 +13,8 @@ namespace DataAnalytics
 {
     public partial class Form3 : Form
     {
+        public static DataTable dt3 = new DataTable();
+
         private bool isCollapsed;
         public Form3()
         {

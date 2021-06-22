@@ -23,3 +23,5 @@ D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.pdb
 C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.csproj.AssemblyReference.cache
 C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.Form2.resources
 C:\Users\Lenovo\source\repos\DataAnalytics\obj\Debug\DataAnalytics.Form3.resources
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.Form2.resources
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.Form3.resources

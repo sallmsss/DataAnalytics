@@ -12,12 +12,14 @@ using System.Windows.Forms;
 namespace DataAnalytics
 {
     public partial class Form2 : Form
-
     {
+        public static DataTable dt2 = new DataTable();
+
         private bool isCollapsed;
         public Form2()
         {
             InitializeComponent();
+            dgvnettoyage.DataSource = dt2;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

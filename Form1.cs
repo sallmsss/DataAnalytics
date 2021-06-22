@@ -13,6 +13,8 @@ namespace DataAnalytics
 {
     public partial class Form1 : Form
     {
+        public static DataTable dt = new DataTable();
+
         private bool isCollapsed;
         public Form1()
         {
@@ -181,6 +183,7 @@ namespace DataAnalytics
         {
             BindDataCSV(txtFilePath.Text);
 
+
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -196,16 +199,181 @@ namespace DataAnalytics
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.Show();
+            if (txtFilePath.Text == "Aucun fichier selectionné." || txtFilePath2.Text == "Aucun fichier selectionné.")
+                MessageBox.Show("Fichier CSV non sélectionné.");
+            else
+            {
+
+                string filePath = txtFilePath.Text;
+                string significationPath = txtFilePath2.Text;
+
+
+
+                string[] lines = System.IO.File.ReadAllLines(filePath);
+                string[] lines2 = System.IO.File.ReadAllLines(significationPath);
+
+                if (lines.Length > 0 && lines2.Length > 0)
+                {
+                    //firstLine to create Header
+                    string firstLine = lines[0];
+                    string[] headerLabels = firstLine.Split(',');
+                    string firstLine2 = lines2[0];
+                    string[] headerLabels2 = firstLine2.Split(',');
+
+                    //**********
+                    int[] colNonSignif = new int[headerLabels.Length];
+                    int[] colNumNULL = new int[headerLabels.Length];
+                    int[] colAlittleNumNULL = new int[headerLabels.Length];
+                    int[] numNULL = new int[headerLabels.Length];
+                    for (int i = 0; i < numNULL.Length; i++) numNULL[i] = 0;
+                    for (int i = 0; i < colNumNULL.Length; i++) colNumNULL[i] = 0;
+                    for (int i = 0; i < colAlittleNumNULL.Length; i++) colAlittleNumNULL[i] = 0;
+                    //**********
+
+                    //col non signif
+                    int columnIndex = 0;
+                    foreach (string headerWord in headerLabels)
+                    {
+                        foreach (string headerWord2 in headerLabels2)
+                        {
+                            if (String.Equals(headerWord, headerWord2))
+                            {
+                                colNonSignif[columnIndex] = 1;
+                                break;
+                            }
+                        }
+                        columnIndex++;
+                    }
+
+                    for (int r = 1; r < lines.Length; r++)
+                    {
+                        string[] dataWords = lines[r].Split(',');
+                        columnIndex = 0;
+                        foreach (string headerWord in headerLabels)
+                        {
+                            //.........
+                            if (dataWords[columnIndex] == "")
+                                numNULL[columnIndex]++;
+                            columnIndex++;
+                            //.........
+
+                        }
+                    }
+                    //determiner le nombre des col qu'ont pas de sgnification 
+                    //determiner les col qu'ont beaucoup de val null et les stoker dans un tableau
+
+
+                    int col = 0;
+                    for (int i = 0; i < headerLabels.Length; i++)
+                    {
+                        if (colNonSignif[i] == 0) col++;
+                        if (numNULL[i] > 10) colNumNULL[i]++;
+                        else if (numNULL[i] > 0) colAlittleNumNULL[i]++;
+                    }
+
+
+                    ///.....................
+                    ///
+                    int h = 0,n=0;
+                    String[] newHeader = new String[headerLabels.Length];
+
+                    foreach (string headerWord in headerLabels)
+                    {
+                        if (colNonSignif[h] != 0 && colNumNULL[h] != 1)
+                        {
+                            dt.Columns.Add(new DataColumn(headerWord));
+                            newHeader[n] = headerWord;
+                            n++;
+                        }
+                        h++;
+
+                    }
+                    String[] newHeaderLabels= newHeader.Take(n+1).ToArray();
+
+
+                    //for data
+                    for (int r = 1; r < lines.Length; r++)
+                    {
+                        string[] dataWords = lines[r].Split(',');
+                        String[] newDataWords =new String[dataWords.Length];
+
+                        //eliminate the col that contain alot of null or non signif
+                        int k = 0;
+                        for (int j=0; j < dataWords.Length; j++) 
+                        {
+                            if (colNonSignif[j] == 0 && colNumNULL[j] == 1)
+                                continue;
+                            newDataWords[k] = dataWords[j];
+                            k++;
+                        }
+                        // pass to the next line if this one contains null var
+                        Boolean flag=false;
+                        for (int j = 0; j < newDataWords.Length; j++)
+                        {
+                            if (newDataWords[j] == "")
+                            {
+                                flag = true;
+                                break;
+
+                            }
+
+                        }
+                        if (flag == true)
+                            continue;
+                        //****************** add to the new table   ************
+
+
+
+                        DataRow dr = dt.NewRow();
+                        columnIndex = 0;
+                        
+                        foreach (string headerWord in newHeaderLabels)
+                        {
+                            if (headerWord == null)
+                                break;
+                            dr[headerWord] = dataWords[columnIndex++];
+                            if (columnIndex == newHeaderLabels.Length)
+                                break;
+
+
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                    //.........
+                    
+                    //.........
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    Form2.dt2 = dt;
+                    Form3.dt3 = dt;
+                }
+
+                this.Hide();
+                Form2 f2 = new Form2();
+                f2.Show();
+
+
+            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form3 f3 = new Form3();
-            f3.Show();
+            if (txtFilePath.Text == "Aucun fichier selectionné." || txtFilePath2.Text == "Aucun fichier selectionné.")
+                MessageBox.Show("Fichier CSV non sélectionné.");
+            else
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    Form2.dt2 = dt;
+                    Form3.dt3 = dt;
+                }
+                this.Hide();
+                Form3 f3 = new Form3();
+                f3.Show();
+            }
+                
         }
 
         /** void BindDataCSV(string filePath)
