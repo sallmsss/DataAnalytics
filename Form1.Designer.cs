@@ -247,7 +247,7 @@ namespace DataAnalytics
             this.txtFilePath2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtFilePath2.Location = new System.Drawing.Point(89, 9);
             this.txtFilePath2.Name = "txtFilePath2";
-            this.txtFilePath2.Size = new System.Drawing.Size(140, 14);
+            this.txtFilePath2.Size = new System.Drawing.Size(205, 22);
             this.txtFilePath2.TabIndex = 5;
             this.txtFilePath2.Text = "Aucun fichier selectionné.";
             // 
@@ -279,10 +279,10 @@ namespace DataAnalytics
             // txtFilePath
             // 
             this.txtFilePath.AutoSize = true;
-            this.txtFilePath.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtFilePath.ForeColor = System.Drawing.Color.Beige;
             this.txtFilePath.Location = new System.Drawing.Point(89, 9);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(140, 14);
+            this.txtFilePath.Size = new System.Drawing.Size(205, 22);
             this.txtFilePath.TabIndex = 4;
             this.txtFilePath.Text = "Aucun fichier selectionné.";
             this.txtFilePath.Click += new System.EventHandler(this.label4_Click);
@@ -306,7 +306,7 @@ namespace DataAnalytics
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(345, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 14);
+            this.label3.Size = new System.Drawing.Size(171, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Table de signification";
             // 
@@ -316,7 +316,7 @@ namespace DataAnalytics
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(80, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 14);
+            this.label2.Size = new System.Drawing.Size(139, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Base de données";
             // 
@@ -327,7 +327,7 @@ namespace DataAnalytics
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(124, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 19);
+            this.label1.Size = new System.Drawing.Size(418, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Importer la base de données";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -338,7 +338,7 @@ namespace DataAnalytics
             this.tbLines.Enabled = false;
             this.tbLines.Location = new System.Drawing.Point(204, 222);
             this.tbLines.Name = "tbLines";
-            this.tbLines.Size = new System.Drawing.Size(100, 21);
+            this.tbLines.Size = new System.Drawing.Size(100, 28);
             this.tbLines.TabIndex = 3;
             // 
             // tbColonnes
@@ -346,7 +346,7 @@ namespace DataAnalytics
             this.tbColonnes.Enabled = false;
             this.tbColonnes.Location = new System.Drawing.Point(334, 222);
             this.tbColonnes.Name = "tbColonnes";
-            this.tbColonnes.Size = new System.Drawing.Size(100, 21);
+            this.tbColonnes.Size = new System.Drawing.Size(100, 28);
             this.tbColonnes.TabIndex = 4;
             // 
             // tbpourcent
@@ -354,7 +354,7 @@ namespace DataAnalytics
             this.tbpourcent.Enabled = false;
             this.tbpourcent.Location = new System.Drawing.Point(469, 222);
             this.tbpourcent.Name = "tbpourcent";
-            this.tbpourcent.Size = new System.Drawing.Size(100, 21);
+            this.tbpourcent.Size = new System.Drawing.Size(100, 28);
             this.tbpourcent.TabIndex = 5;
             // 
             // tbCol
@@ -362,7 +362,7 @@ namespace DataAnalytics
             this.tbCol.Enabled = false;
             this.tbCol.Location = new System.Drawing.Point(603, 222);
             this.tbCol.Name = "tbCol";
-            this.tbCol.Size = new System.Drawing.Size(100, 21);
+            this.tbCol.Size = new System.Drawing.Size(100, 28);
             this.tbCol.TabIndex = 6;
             // 
             // dgvEmployees
@@ -398,7 +398,7 @@ namespace DataAnalytics
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 14);
+            this.label4.Size = new System.Drawing.Size(55, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "label4";
             // 
@@ -409,7 +409,7 @@ namespace DataAnalytics
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(201, 205);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 11);
+            this.label5.Size = new System.Drawing.Size(116, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Total lignes";
             // 
@@ -420,7 +420,7 @@ namespace DataAnalytics
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(331, 205);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 11);
+            this.label6.Size = new System.Drawing.Size(134, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Total colonnes";
             // 
@@ -431,7 +431,7 @@ namespace DataAnalytics
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label7.Location = new System.Drawing.Point(467, 205);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 11);
+            this.label7.Size = new System.Drawing.Size(197, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "% valeurs manquantes ";
             // 
@@ -442,13 +442,13 @@ namespace DataAnalytics
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label8.Location = new System.Drawing.Point(600, 205);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 11);
+            this.label8.Size = new System.Drawing.Size(305, 17);
             this.label8.TabIndex = 12;
             this.label8.Text = "colonnes avec valeurs manquantes ";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(800, 485);

@@ -51,3 +51,5 @@ C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.csproj.CoreCompi
 C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.csproj.CopyComplete
 C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.exe
 C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.pdb
+C:\Users\user\Documents\GitHub\DataAnalytics\obj\Debug\DataAnalytics.Form4.resources
+C:\Users\user\Documents\GitHub\DataAnalytics\obj\Debug\DataAnalytics.Form5.resources

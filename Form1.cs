@@ -378,12 +378,16 @@ namespace DataAnalytics
                     Form2.bcpValManq = bcpValManq;
                     Form2.linesValManq = linesValManq;
                     Form3.dt3 = dt;
+                    Form4.dt4 = dt;
+                    Form5.dt5 = dt;
+
+
                 }
 
                 this.Hide();
                 Form2 f2 = new Form2();
                 f2.Show();
-
+                Form3.fileName = txtFilePath.Text;
 
             }
 
@@ -400,6 +404,11 @@ namespace DataAnalytics
                 {
                     Form2.dt2 = dt;
                     Form3.dt3 = dt;
+                    Form4.dt4 = dt;
+                    Form3.fileName = txtFilePath.Text;
+                    Form5.dt5 = dt;
+
+
                 }
                 this.Hide();
                 Form3 f3 = new Form3();
