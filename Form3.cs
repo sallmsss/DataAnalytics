@@ -20,74 +20,13 @@ namespace DataAnalytics
         public Form3()
         {
             InitializeComponent();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (isCollapsed)
+            if (dt3.Rows.Count == 0)
             {
-                button1.Image = Resources.lasthaut;
-                panelDrop.Height += 10;
-
-                if (panelDrop.Size == panelDrop.MaximumSize)
-                {
-                    timer1.Stop();
-                    isCollapsed = false;
-                }
+                MessageBox.Show("il faut faire un nettoyage d'abord");
             }
-
-            else
-            {
-                button1.Image = Resources.lastbas;
-                panelDrop.Height -= 10;
-
-                if (panelDrop.Size == panelDrop.MinimumSize)
-                {
-                    timer1.Stop();
-                    isCollapsed = true;
-                }
-
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 f1 = new Form1();
-            f1.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.Show();
-        }
-
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void chart6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuImageButton3_Click(object sender, EventArgs e)
-        {
+            
             // CHART 1 : Accident par annee :
-            //MessageBox.Show(dt3.Rows.Count.ToString());
+            //
             DataRow[] rows = dt3.Select();
             // initialiser les compteurs du chart 1
             int cmp13 = 0; int cmp14 = 0; int cmp15 = 0; int cmp16 = 0; int cmp17 = 0;
@@ -95,7 +34,7 @@ namespace DataAnalytics
             int cmpHomme = 0; int cmpFemme = 0;
 
             // initialiser les compteurs du chart 3
-            int cmpPrf0=0; int cmpPrf1 = 0; int cmpPrf2 = 0; int cmpPrf3 = 0;
+            int cmpPrf0 = 0; int cmpPrf1 = 0; int cmpPrf2 = 0; int cmpPrf3 = 0;
             int cmpPrf4 = 0; int cmpPrf5 = 0; int cmpPrf6 = 0; int cmpPrf7 = 0; int cmpPrf8 = 0;
 
             int cmpTue0 = 0; int cmpTue1 = 0; int cmpTue2 = 0; int cmpTue3 = 0;
@@ -141,7 +80,7 @@ namespace DataAnalytics
                 else
                     cmpHomme++;
                 // Professiom
-                switch (""+row["COD_PRF"])
+                switch ("" + row["COD_PRF"])
                 {
                     case "1.0":
                         cmpPrf0++;
@@ -264,16 +203,16 @@ namespace DataAnalytics
             //chart1.Series[0].LegendText = "#VALX";
             int[] cmpAnn = { cmp13, cmp14, cmp15, cmp16, cmp17 };
             int annee = 2012;
-            for(int i=0; i<5; i++)
-                {
-                    annee++;
-                    chart1.Series["ann_acc"].Points[i].LegendText = ""+cmpAnn[i]+" - "+annee;
-                }
+            for (int i = 0; i < 5; i++)
+            {
+                annee++;
+                chart1.Series["ann_acc"].Points[i].LegendText = "" + cmpAnn[i] + " - " + annee;
+            }
 
             // chart 2 sexe
             chart2.Series["sexe"].Points.AddXY("Homme", cmpHomme);
             chart2.Series["sexe"].Points.AddXY("Femme", cmpFemme);
-            
+
             chart2.Series["sexe"].Label = "#PERCENT";
             chart2.Series["sexe"].Points[0].LegendText = "" + cmpHomme + " - H";
             chart2.Series["sexe"].Points[1].LegendText = "" + cmpFemme + " - F";
@@ -291,11 +230,11 @@ namespace DataAnalytics
 
             chart3.Series["cod_prf"].Label = "#PERCENT";
 
-            int[] cmpPrf = { cmpPrf0, cmpPrf1, cmpPrf2, cmpPrf3, cmpPrf4,cmpPrf5, cmpPrf6, cmpPrf7, cmpPrf8 };
+            int[] cmpPrf = { cmpPrf0, cmpPrf1, cmpPrf2, cmpPrf3, cmpPrf4, cmpPrf5, cmpPrf6, cmpPrf7, cmpPrf8 };
             string[] prfLabel = { "Scientifique", "Commerciale", "Direct. ou cadre admin.", "Travailleur", "Agricole", "Ouvrier", "Etudiant", "Sans profession", "Autre" };
             for (int i = 0; i < 9; i++)
             {
-                chart3.Series["cod_prf"].Points[i].LegendText = ""+cmpPrf[i] +" -"+ prfLabel[i];
+                chart3.Series["cod_prf"].Points[i].LegendText = "" + cmpPrf[i] + " -" + prfLabel[i];
             }
 
 
@@ -306,7 +245,7 @@ namespace DataAnalytics
             chart4.Series["cod_tue"].Points.AddXY("2016", cmpTue3);
             chart4.Series["cod_tue"].Points.AddXY("2016", cmpTue4);
             chart4.Series["cod_tue"].Points.AddXY("2016", cmpTue5);
-           
+
 
             chart4.Series["cod_tue"].Label = "#PERCENT";
 
@@ -322,12 +261,12 @@ namespace DataAnalytics
             chart5.Series["cod_ble"].Points.AddXY("2014", cmpBle1);
             chart5.Series["cod_ble"].Points.AddXY("2015", cmpBle2);
             chart5.Series["cod_ble"].Points.AddXY("2016", cmpBle3);
-            
+
 
 
             chart5.Series["cod_ble"].Label = "#PERCENT";
 
-            int[] cmpBle = { cmpBle0, cmpBle1, cmpBle2, cmpBle3+ cmpBle4+ cmpBle5+ cmpBle6+ cmpBle7+ cmpBle8 };
+            int[] cmpBle = { cmpBle0, cmpBle1, cmpBle2, cmpBle3 + cmpBle4 + cmpBle5 + cmpBle6 + cmpBle7 + cmpBle8 };
             string[] bleLabel = { "Non Ble", "B.Grave", "B.leger", "autre" };
             for (int i = 0; i < 4; i++)
             {
@@ -340,9 +279,70 @@ namespace DataAnalytics
             chart6.Series["annee"].Points.AddXY("2016", cmp16);
             chart6.Series["annee"].Points.AddXY("2017", cmp17);
 
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsed)
+            {
+                button1.Image = Resources.lasthaut;
+                panelDrop.Height += 10;
 
+                if (panelDrop.Size == panelDrop.MaximumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = false;
+                }
+            }
+
+            else
+            {
+                button1.Image = Resources.lastbas;
+                panelDrop.Height -= 10;
+
+                if (panelDrop.Size == panelDrop.MinimumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = true;
+                }
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void chart6_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

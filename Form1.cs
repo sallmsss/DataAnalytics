@@ -147,7 +147,12 @@ namespace DataAnalytics
                     {
                         //.........
                         if (dataWords[columnIndex] == "")
+                        {
+                            dataWords[columnIndex] = "Nan";
                             numNULL[columnIndex]++;
+
+
+                        }
                         //.........
                         dr[headerWord] = dataWords[columnIndex++];
 
