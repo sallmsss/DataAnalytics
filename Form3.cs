@@ -295,6 +295,7 @@ namespace DataAnalytics
                 //MessageBox.Show("File incorrect");
                 Form5 f5 = new Form5();
                 Form5.dt5 = dt3;
+                this.Hide();
                 f5.Show();
 
 

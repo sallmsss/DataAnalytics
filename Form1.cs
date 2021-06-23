@@ -14,6 +14,7 @@ namespace DataAnalytics
     public partial class Form1 : Form
     {
         public static DataTable dt = new DataTable();
+        public static Boolean isclean =false ;
 
         private bool isCollapsed;
         public Form1()
@@ -203,6 +204,7 @@ namespace DataAnalytics
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            isclean = false;
             dt.Columns.Clear();
             dt.Rows.Clear();
             if (txtFilePath.Text == "Aucun fichier selectionné." || txtFilePath2.Text == "Aucun fichier selectionné.")
@@ -383,6 +385,7 @@ namespace DataAnalytics
 
 
                 }
+                isclean = true;
 
                 this.Hide();
                 Form2 f2 = new Form2();
@@ -398,6 +401,11 @@ namespace DataAnalytics
         {
             if (txtFilePath.Text == "Aucun fichier selectionné." || txtFilePath2.Text == "Aucun fichier selectionné.")
                 MessageBox.Show("Fichier CSV non sélectionné.");
+            else if (!isclean)
+            {
+                MessageBox.Show("Nettoyer le fichier d'abord.");
+
+            }
             else
             {
                 if (dt.Rows.Count > 0)
@@ -417,41 +425,7 @@ namespace DataAnalytics
                 
         }
 
-        /** void BindDataCSV(string filePath)
-{
-    DataTable dt2 = new DataTable();
-
-    string[] lines2 = System.IO.File.ReadAllLines(filePath);
-    if (lines2.Length > 0)
-    {
-        //firstLine to create Header
-        string firstLine = lines2[0];
-        string[] headerLabels = firstLine.Split(',');
-
-        foreach (string headerWord in headerLabels)
-        {
-            dt2.Columns.Add(new DataColumn(headerWord));
-        }
-        //for data
-        for (int r = 1; r < lines2.Length; r++)
-        {
-            string[] dataWords = lines2[r].Split(',');
-            DataRow dr = dt2.NewRow();
-            int columnIndex = 0;
-            foreach (string headerWord in headerLabels)
-            {
-                dr[headerWord] = dataWords[columnIndex++];
-            }
-            dt2.Rows.Add(dr);
-        }
-    }
-    if (dt2.Rows.Count > 0)
-    {
-        dgvEmployees.DataSource = dt2;
-    }
-
-
-}*/
+       
 
 
     }

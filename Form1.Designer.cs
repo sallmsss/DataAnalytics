@@ -279,7 +279,7 @@ namespace DataAnalytics
             // txtFilePath
             // 
             this.txtFilePath.AutoSize = true;
-            this.txtFilePath.ForeColor = System.Drawing.Color.Beige;
+            this.txtFilePath.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtFilePath.Location = new System.Drawing.Point(89, 9);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(205, 22);

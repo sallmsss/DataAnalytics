@@ -53,3 +53,9 @@ C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.exe
 C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.pdb
 C:\Users\user\Documents\GitHub\DataAnalytics\obj\Debug\DataAnalytics.Form4.resources
 C:\Users\user\Documents\GitHub\DataAnalytics\obj\Debug\DataAnalytics.Form5.resources
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.Form4.resources
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.Form5.resources
+D:\DOTNET\DataAnalytics\bin\Debug\DataAnalytics.exe.manifest
+D:\DOTNET\DataAnalytics\bin\Debug\DataAnalytics.application
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.exe.manifest
+D:\DOTNET\DataAnalytics\obj\Debug\DataAnalytics.application
