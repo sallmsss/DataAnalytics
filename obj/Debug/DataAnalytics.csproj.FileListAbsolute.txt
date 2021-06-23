@@ -38,3 +38,16 @@ C:\Users\user\Documents\GitHub\DataAnalytics\bin\Debug\DataAnalytics.exe.config
 C:\Users\user\Documents\GitHub\DataAnalytics\bin\Debug\DataAnalytics.exe
 C:\Users\user\Documents\GitHub\DataAnalytics\bin\Debug\DataAnalytics.pdb
 C:\Users\user\Documents\GitHub\DataAnalytics\obj\Debug\DataAnalytics.csproj.CopyComplete
+C:\Users\Lenovo\Downloads\DataAnalytics\bin\Debug\DataAnalytics.exe.config
+C:\Users\Lenovo\Downloads\DataAnalytics\bin\Debug\DataAnalytics.exe
+C:\Users\Lenovo\Downloads\DataAnalytics\bin\Debug\DataAnalytics.pdb
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.csprojAssemblyReference.cache
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.Form1.resources
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.Form2.resources
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.Form3.resources
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.Properties.Resources.resources
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.csproj.GenerateResource.cache
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.csproj.CopyComplete
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.exe
+C:\Users\Lenovo\Downloads\DataAnalytics\obj\Debug\DataAnalytics.pdb
