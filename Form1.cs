@@ -118,7 +118,7 @@ namespace DataAnalytics
         }
         void BindDataCSV(string filePath)
         {
-            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
 
             string[] lines = System.IO.File.ReadAllLines(filePath);
             if (lines.Length > 0)
@@ -135,13 +135,13 @@ namespace DataAnalytics
                 ///.....................
                 foreach (string headerWord in headerLabels)
                 {
-                    dt.Columns.Add(new DataColumn(headerWord));
+                    dt2.Columns.Add(new DataColumn(headerWord));
                 }
                 //for data
                 for (int r = 1; r < lines.Length; r++)
                 {
                     string[] dataWords = lines[r].Split(',');
-                    DataRow dr = dt.NewRow();
+                    DataRow dr = dt2.NewRow();
                     int columnIndex = 0;
                     foreach (string headerWord in headerLabels)
                     {
@@ -153,7 +153,7 @@ namespace DataAnalytics
 
 
                     }
-                    dt.Rows.Add(dr);
+                    dt2.Rows.Add(dr);
                 }
                 //.........
                 tbColonnes.Text = headerLabels.Length.ToString();
@@ -171,9 +171,9 @@ namespace DataAnalytics
 
 
             }
-            if (dt.Rows.Count > 0)
+            if (dt2.Rows.Count > 0)
             {
-                dgvEmployees.DataSource = dt;
+                dgvEmployees.DataSource = dt2;
             }
 
 
@@ -195,15 +195,16 @@ namespace DataAnalytics
             }
         }
 
-        
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            dt.Columns.Clear();
+            dt.Rows.Clear();
             if (txtFilePath.Text == "Aucun fichier selectionné." || txtFilePath2.Text == "Aucun fichier selectionné.")
                 MessageBox.Show("Fichier CSV non sélectionné.");
             else
             {
-                String aucuneSignif="", bcpValManq="", linesValManq= "";
+                String aucuneSignif = "", bcpValManq = "", linesValManq = "";
 
                 string filePath = txtFilePath.Text;
                 string significationPath = txtFilePath2.Text;
@@ -245,7 +246,7 @@ namespace DataAnalytics
                         }
                         columnIndex++;
                     }
-                    
+
 
                     for (int r = 1; r < lines.Length; r++)
                     {
@@ -279,16 +280,16 @@ namespace DataAnalytics
                         if (colNonSignif[i] == 0)
                         {
 
-                            aucuneSignif = aucuneSignif  + headerLabels[i] + ", ";
+                            aucuneSignif = aucuneSignif + headerLabels[i] + ", ";
                         }
-                        if(colNumNULL[i]== 1)
+                        if (colNumNULL[i] == 1)
                         {
                             bcpValManq = bcpValManq + headerLabels[i] + ", ";
 
                         }
                         if (colAlittleNumNULL[i] == 1)
                         {
-                            linesValManq = linesValManq  + headerLabels[i] + ", ";
+                            linesValManq = linesValManq + headerLabels[i] + ", ";
 
                         }
 
@@ -296,7 +297,7 @@ namespace DataAnalytics
 
                     ///.....................
                     ///
-                    int h = 0,n=0;
+                    int h = 0, n = 0;
                     String[] newHeader = new String[headerLabels.Length];
 
                     foreach (string headerWord in headerLabels)
@@ -310,18 +311,18 @@ namespace DataAnalytics
                         h++;
 
                     }
-                    String[] newHeaderLabels= newHeader.Take(n+1).ToArray();
+                    String[] newHeaderLabels = newHeader.Take(n + 1).ToArray();
 
 
                     //for data
                     for (int r = 1; r < lines.Length; r++)
                     {
                         string[] dataWords = lines[r].Split(',');
-                        String[] newDataWords =new String[dataWords.Length];
+                        String[] newDataWords = new String[dataWords.Length];
 
                         //eliminate the col that contain alot of null or non signif
                         int k = 0;
-                        for (int j=0; j < dataWords.Length; j++) 
+                        for (int j = 0; j < headerLabels.Length; j++)
                         {
                             if (colNonSignif[j] == 0 || colNumNULL[j] == 1)
                                 continue;
@@ -329,7 +330,7 @@ namespace DataAnalytics
                             k++;
                         }
                         // pass to the next line if this one contains null var
-                        Boolean flag=false;
+                        Boolean flag = false;
                         for (int j = 0; j < newDataWords.Length; j++)
                         {
                             if (newDataWords[j] == "")
@@ -348,7 +349,7 @@ namespace DataAnalytics
 
                         DataRow dr = dt.NewRow();
                         columnIndex = 0;
-                        
+
                         foreach (string headerWord in newHeaderLabels)
                         {
                             if (headerWord == null)
@@ -362,7 +363,7 @@ namespace DataAnalytics
                         dt.Rows.Add(dr);
                     }
                     //.........
-                    
+
                     //.........
                 }
                 if (dt.Rows.Count > 0)
@@ -382,6 +383,7 @@ namespace DataAnalytics
             }
 
         }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
