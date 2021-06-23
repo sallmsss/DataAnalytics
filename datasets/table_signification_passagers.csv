@@ -1,0 +1,10 @@
+ANN_ACC,COD_PLA_VEH,SEX,COD_PRF,COD_TUE,COD_BLE
+2013.0,1,Masculin,"Scientifique, technique ou liberale",Non Tue,Non blesse
+2014.0,2,Feminin,Commerciale,Tue sur le champ,Blesse grave necessitant hospitalisation
+2015.0,3,,Directeur ou cadre administratif,Tue pendant le transfert a l'hopital,Blesse leger necessitant soins legers
+2016.0,4,,Travailleur specialise dans les services,Tue dans les 7 jours suivant l'accident,
+2017.0,5,,Agricole ou assimilee,Tue dans les 30 jours suivant l'accident,
+,6,,Ouvrier ou manoeuvre non agricole,,
+,7,,Etudiant ou eleve,,
+,8,,Sans profession,,
+,9,,Autre a preciser dans le resume,,

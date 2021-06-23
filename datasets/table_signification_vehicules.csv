@@ -1,0 +1,17 @@
+ANN_ACC,COD_TYP_VEH,COD_USA_VEH,COD_DEF_MEC,SEX_CON,COD_PRF_CON,COD_CAT_PER,COD_TRA,COD_TUE,COD_BLE,COD_FAU_CON,COD_FAC_PHY,COD_FAU_NON_CON
+2013.0,Bicyclette,Propiete du conducteur,Defectuosite du systeme de direction,Masculin,"Scientifique, technique ou liberale",Motocyclyste,Domicile-Travail,Non Tue,Non blesse,Non respect du feu rouge ou stop,Infirmite,Animaux sur chaussee
+2014.0,Cycle a moteur,Taxi ou T.P Voyageurs,Defaut d'eclairage,Feminin,Commerciale,Voiture de tourisme (B),Domicile-Ecole,Tue sur le champ,Blesse grave necessitant hospitalisation,Non respect de priorite,Boissons alcoolisees,Obstacle abandon.sur chaus.et non signal
+2015.0,Fauteuil pour handicape,Transport de marchandises,Defaut de freins,,Directeur ou cadre administratif,Camions poids > 3.5T (C),Courses-Achats,Tue pendant le transfert a l'hopital,Blesse leger necessitant soins legers,Franchi.ligne continue mixte/Depas.irreg,Stupefiants + medicaments,Ecatement de pneu
+2016.0,Voiture de tourisme,Vehicule de l'etat,Pneus non conformes ou uses,,Travailleur specialise dans les services,Transport de + de 9 personnes,Utilisation professionnelle,Tue dans les 7 jours suivant l'accident,,Manoeuvre irreg.non signalee/defectueuse,Sommeil,Trou dangereux sur la chaussee
+2017.0,Autobus,Loue-Prete-Vole,Ouverture de portiere,,Agricole ou assimilee,"(B), (C) ou (D) avec remorque > 750kg(E)",Promenade loisirs,Tue dans les 30 jours suivant l'accident,,Circulait sans precautions,Fatigue - Malaise soudain,Casse accidentelle du pare-brise
+,Autocar,En fuite apres l'accident,Defauts mecaniques,,Ouvrier ou manoeuvre non agricole,Autres a preciser dans le resume,Autres a preciser dans le resume,,,Exces de vitesse,Autres a preciser dans le resume,Chantier de travaux non signale
+,"VU < 5,5 T (Vehicule Utilitaire)",Autres a preciser dans le resume,"Surcharge, chargement defectueux",,Etudiant ou eleve,,,,,Circulait en zone interdite,,Autres a preciser dans le resume
+,8T > PL > 5.5T,,Passagers en surplus/position dangereuse,,Sans profession,,,,,Arret ou stationnement defectueux,,
+,PL > 8T ou semi remorque,,Autres a preciser dans le resume,,Autre a preciser dans le resume,,,,,Autres a preciser dans le resume,,
+,Engin agricole,,,,,,,,,,,
+,Engin TP ou Genie,,,,,,,,,,,
+,Train,,,,,,,,,,,
+,Poussette a charrette,,,,,,,,,,,
+,Animal monte,,,,,,,,,,,
+,Tramway,,,,,,,,,,,
+,Autres a preciser dans le resume,,,,,,,,,,,
